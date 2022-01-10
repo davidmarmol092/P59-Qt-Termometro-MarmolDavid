@@ -8,7 +8,7 @@ Termometro::Termometro(QWidget *parent)
     , ui(new Ui::Termometro)
 {
     ui->setupUi(this);
-    // Conectar dialCent ---> cent2fahr
+    // Conecto dialCent ---> cent2fahr
     connect(ui->cmdCent, SIGNAL(valueChanged(int)),
             this, SLOT(cent2fahr(int)));
     // Conectar dialFahr ---> fahr2cent
@@ -25,6 +25,7 @@ Termometro::~Termometro()
     delete ui;
 }
 
+//cent a fahr
 void Termometro::cent2fahr(int valor)
 {
     if (ui->cmdCent->hasFocus()){
@@ -37,6 +38,7 @@ void Termometro::cent2fahr(int valor)
     }
 }
 
+//far a cent
 void Termometro::fahr2cent(int valor)
 {
     if (ui->cmdFahr->hasFocus()){
